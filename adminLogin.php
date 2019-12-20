@@ -1,3 +1,14 @@
+<?php
+  session_start();
+  //Kullanıcı daha önce giriş yapmışsa direkt olarak dashboard sayfasına gönder
+  if(!empty($_SESSION["kullaniciAdi"]) && !empty($_SESSION["kullaniciSifresi"])){
+    header("Location: dashboard.php");
+    exit;
+  }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -10,7 +21,14 @@
   <title>Login Page</title>
 
   <style>
-  body{}
+    body{
+      height: 100vh;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     #main{
       width: 100%;
       height: 500px;
