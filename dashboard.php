@@ -42,10 +42,35 @@
     </head>
     <body>
         <div id="overlay" hidden></div>
-        <div id="first-section-popup" class="popup" hidden></div>   
-        <div id="add-article-popup" class="popup" hidden>fff</div>
-        <div id="delete-article-popup" class="popup" hidden>aa</div>
-        <div id="footer-section-popup" class="popup" hidden>bb</div>
+        <div id="first-section-popup" class="popup" hidden>
+            <form method="post" action="updateFirstSection.php" class="form">
+                <div class="formInputs">
+                    <?php 
+                        $document = $firstText->findOne(["name" => "first-content-text"]);
+                        $image = $firstText->findOne(["name" => "main-photo"]);
+                    ?>
+                    <h3>Main Text Title</h2> 
+                    <input type="text" name="firstTextTitle" value="<?php echo $document->title ?>" class="input">
+                    <h3>Main Text</h2>
+                    <textarea name="firstTextContent" class="textareaInput"><?php echo $document->content ?></textarea>
+                    <h3>Main Photo Url</h2> 
+                    <input type="text" name="firstTextPhoto" value="<?php echo $image->url ?>" class="input">
+                    <input type="submit" value="Güncelle" class="button">
+                </div>
+            </form>
+        </div>   
+        <div id="add-article-popup" class="popup" hidden>
+            <form method="post" action="addArticle.php" class="form">
+                <div class="formInputs">
+                    <h3> Article Title </h3>
+                    <input type="text" name="articleTitle">
+                    <h3>Article Content</h3>
+                    <textarea name="articleContent" class="textareaInput"></textarea>
+                </div>
+            </form>
+        </div>
+        <div id="delete-article-popup" class="popup" hidden></div>
+        <div id="footer-section-popup" class="popup" hidden></div>
         <div class="container">
             <h2>Select The Change You Want To Make</h2>
             <div id="first-section" class="button">First Section</div>
