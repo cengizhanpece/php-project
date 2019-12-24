@@ -80,7 +80,8 @@
             </div>
             <?php
                 $allArticles = $articles->find(["name" => "Article"]);
-                $count = 2;
+                $count = 0;
+                $documentLength = $articles->count(["name" => "Article"]);
                 foreach($allArticles as $article){
                     if($count % 2 == 0)
                     {
@@ -96,7 +97,7 @@
                             <p>$article->content</p>
                         </div>
                     </div>";
-                    if($count % 2 != 0)
+                    if($count % 2 != 0 || $count == $documentLength - 1)
                     {
                         echo '</div>';
                     }

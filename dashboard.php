@@ -55,7 +55,7 @@
                     <textarea name="firstTextContent" class="textareaInput"><?php echo $document->content ?></textarea>
                     <h3>Main Photo Url</h2> 
                     <input type="text" name="firstTextPhoto" value="<?php echo $image->url ?>" class="input">
-                    <input type="submit" value="Güncelle" class="button">
+                    <input type="submit" value="Update" class="button">
                 </div>
             </form>
         </div>   
@@ -63,9 +63,12 @@
             <form method="post" action="addArticle.php" class="form">
                 <div class="formInputs">
                     <h3> Article Title </h3>
-                    <input type="text" name="articleTitle">
+                    <input type="text" name="articleTitle" class="input">
                     <h3>Article Content</h3>
                     <textarea name="articleContent" class="textareaInput"></textarea>
+                    <h3>Article Photo Url</h3>
+                    <input type="text" name="articlePhoto" class="input">
+                    <input type="submit" value="Add Article" class="button">
                 </div>
             </form>
         </div>
