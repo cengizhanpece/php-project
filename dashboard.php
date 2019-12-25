@@ -72,7 +72,21 @@
                 </div>
             </form>
         </div>
-        <div id="delete-article-popup" class="popup" hidden></div>
+        <div id="delete-article-popup" class="popup" hidden>
+            <?php
+                $allArticles = $articles->find(["name" => "Article"]);
+                foreach($allArticles as $article)
+                {
+                    echo "
+                    <div class='articleContainer'>
+                        <h4 class='articleTitle'> $article->title</h4>
+                        <div class='articleContent'> $article->content</div>
+                        <div class='articlePhoto'> $article->photo </div>
+                        <div class='deleteArticleButton' onClick='deleteArticles(\"$article->_id\",this)'>Delete Article</div>
+                    </div>";
+                }
+            ?>
+        </div>
         <div id="footer-section-popup" class="popup" hidden></div>
         <div class="container">
             <h2>Select The Change You Want To Make</h2>
