@@ -6,17 +6,20 @@
         exit;
     }
     //url ile ulaşılmaya çalışılmışsa işlem yapma
-    if(empty($_POST["id"])){
+    if(empty($_POST["name"]) || empty($_POST["no"]) || empty($_POST["mail"]) || empty($_POST["photo"]) ){
         header("Location: adminLogin.php");
         exit;
     }
-    // Mongodb modulunu yükle
+    // Mongodb modülünü yükle
     require 'vendor/autoload.php';
     //Mongodb access string ile yeni bir mongodb client oluştur
     $client = new MongoDB\Client("mongodb+srv://Cengizhan:Cengiz53@cengizhan-qpwns.mongodb.net/test?retryWrites=true&w=majority");
     //Client içindeki databaseyi ve tabloları getir
     $db = $client->php;
-    $articles = $db->Article;
+    $footer = $db->footer;
     
-    $articles->deleteOne(["_id" => new MongoDB\BSON\ObjectId($_POST["id"])]);
+
+    $footer->updateOne(["name" => "footer-information"], ['$set' => ["footerName" => $_POST["name"], "footerNo"=> $_POST["no"], "footerMail" => $_POST["mail"]]]);
+    $footer->updateOne(["name" => "footer-photo"], ['$set'=> ["url"=> $_POST["photo"]]]);
+    header("Location: dashboard.php");
 ?>

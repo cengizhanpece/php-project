@@ -16,7 +16,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ROBOT TEKOLOJİLERİ</title>
+    <title>PHP PROJE</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -42,7 +42,7 @@
             <!--HEADER-->
             <div class="logo">
                 <!--logo-->
-                Robot Teknolojileri
+                PHP PROJE
             </div>
             <div class="social">
                 <!--socail-icons-->

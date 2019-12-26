@@ -1,17 +1,7 @@
 
 <?php
     session_start();
-    // Mongodb modulunu yükle
-    require 'vendor/autoload.php';
-    //Mongodb access string ile yeni bir mongodb client oluştur
-    $client = new MongoDB\Client("mongodb+srv://Cengizhan:Cengiz53@cengizhan-qpwns.mongodb.net/test?retryWrites=true&w=majority");
-    //Client içindeki databaseyi ve tabloları getir
-    $db = $client->php;
-    $firstText = $db->firstText;
-    $articles = $db->Article;
-    $footer = $db->footer;
-    $user = $db->user;
-    
+
     //Eğer kullanıcı daha önce giriş yapmışsa tekrardan form sorgulama
     if(empty($_SESSION["kullaniciAdi"]) && empty($_SESSION["kullaniciSifresi"])){
         // Kullanıcı formu göndermeden sadece url ile ulaşmaya çalışmışsa login sayfasına geri gönder ve programı exitle
@@ -30,6 +20,19 @@
         $_SESSION["kullaniciAdi"] = $loggedUser->id;
         $_SESSION["kullaniciSifresi"] = $loggedUser->password;
     }
+    
+    // Mongodb modulunu yükle
+    require 'vendor/autoload.php';
+    //Mongodb access string ile yeni bir mongodb client oluştur
+    $client = new MongoDB\Client("mongodb+srv://Cengizhan:Cengiz53@cengizhan-qpwns.mongodb.net/test?retryWrites=true&w=majority");
+    //Client içindeki databaseyi ve tabloları getir
+    $db = $client->php;
+    $firstText = $db->firstText;
+    $articles = $db->Article;
+    $footer = $db->footer;
+    $user = $db->user;
+    
+    
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +90,25 @@
                 }
             ?>
         </div>
-        <div id="footer-section-popup" class="popup" hidden></div>
+        <div id="footer-section-popup" class="popup" hidden>
+            <?php 
+                $document = $footer->findOne(["name" => "footer-information"]);
+                $image = $footer->findOne(["name" => "footer-photo"]);
+            ?>
+            <form method="post" action="updateFooter.php" class="form">
+                <div class="formInputs">
+                    <h3> Name </h3>
+                    <input type="text" name="name" class="input" value="<?php echo $document->footerName?>">
+                    <h3>No</h3>
+                    <input type="text" name="no" class="input" value="<?php echo $document->footerNo?>">
+                    <h3>E-Mail</h3>
+                    <input type="text" name="mail" class="input" value="<?php echo $document->footerMail?>">
+                    <h3>Footer Photo Url</h3>
+                    <input type="text" name="photo" class="input" value="<?php echo $image->url?>">
+                    <input type="submit" value="Update Footer" class="button">
+                </div>
+            </form>
+        </div>
         <div class="container">
             <h2>Select The Change You Want To Make</h2>
             <div id="first-section" class="button">First Section</div>

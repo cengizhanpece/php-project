@@ -21,6 +21,7 @@ body{
     cursor:pointer;
     font-size:19px;
     border:1px solid transparent;
+    transition: 0.3s;
 }
 .button:hover{
     border: 0;
@@ -90,13 +91,26 @@ body{
 .articleTitle{
     color: #f56a6a;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 }
 .articleContent, .articlePhoto{
     color: #41474c;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 }
-
+.deleteArticleButton{
+    padding: 5px;
+    background-color: #333;
+    color:#eee;
+    border:1px solid transparent;
+    text-align: center;
+    cursor:pointer;
+    transition: 0.2s;
+}
+.deleteArticleButton:hover{
+    border: 1px solid #333;
+    background-color: transparent;
+    color:#333;
+}
 @media screen and (max-width:550px) {
 .popup {
     position: absolute;
