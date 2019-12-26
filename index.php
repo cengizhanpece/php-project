@@ -43,13 +43,6 @@
                 <!--logo-->
                 PHP PROJE
             </div>
-            <div class="social">
-                <!--socail-icons-->
-                <div class="fa fa-facebook-square"></div>
-                <div class="fa fa-twitter-square"></div>
-                <div class="fa fa-instagram"></div>
-                <div class="fa fa-info-circle"></div>
-            </div>
         </div>
 
 
