@@ -26,12 +26,11 @@
     <link rel="stylesheet" type="text/css" href="footer.css">
     <link rel="stylesheet" type="text/css" href="first-content.css">
     <link rel="stylesheet" type="text/css" href="second-content.css">
-    <link rel="stylesheet" type="text/css" href="slider.css">
-    <link rel="stylesheet" type="text/css" href="slider-mobile.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="main-mobile.css">
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     
     <!-- JS FİLES -->
-    <script src="slider.js"></script>
     <script src="go-top-btn.js"></script>
     
 </head>
