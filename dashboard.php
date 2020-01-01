@@ -1,7 +1,7 @@
 
 <?php
     session_start();
-
+    
     // Mongodb modulunu yükle
     require 'vendor/autoload.php';
     //Mongodb access string ile yeni bir mongodb client oluştur
@@ -28,7 +28,7 @@
             header("Location: adminLogin.php");
             exit;
         }
-        //Kullanıcı adı ve şifresi bulunmuşsa sessiona ekle
+        //Kullanıcı adı ve şifresi bulunmuşsa sessiona ekle 
         $_SESSION["kullaniciAdi"] = $loggedUser->id;
         $_SESSION["kullaniciSifresi"] = $loggedUser->password;
     }
