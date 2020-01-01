@@ -1,5 +1,15 @@
 <?php
     session_start();
+    //Eğer kullanıcı daha önce giriş yapmamışsa login sayfasına gönder
+    if(empty($_SESSION["kullaniciAdi"]) && empty($_SESSION["kullaniciSifresi"])){
+        header("Location: adminLogin.php");
+        exit;
+    }
+    //url ile ulaşılmaya çalışılmışsa işlem yapma
+    if(empty($_POST["firstTextTitle"]) || empty($_POST["firstTextContent"]) || empty($_POST["firstTextPhoto"]) ){
+        header("Location: adminLogin.php");
+        exit;
+    }
     // Mongodb modulunu yükle
     require 'vendor/autoload.php';
     //Mongodb access string ile yeni bir mongodb client oluştur
@@ -7,11 +17,7 @@
     //Client içindeki databaseyi ve tabloları getir
     $db = $client->php;
     $firstText = $db->firstText;
-    //Eğer kullanıcı daha önce giriş yapmışsa tekrardan form sorgulama
-    if(empty($_SESSION["kullaniciAdi"]) && empty($_SESSION["kullaniciSifresi"])){
-        header("Location: adminLogin.php");
-        exit;
-    }
+    
 
     $firstText->updateOne(["name" => "first-content-text"], ['$set' => ["title" => $_POST["firstTextTitle"], "content"=> $_POST["firstTextContent"]]]);
     $firstText->updateOne(["name" => "main-photo"], ['$set'=> ["url"=> $_POST["firstTextPhoto"]]]);

@@ -16,7 +16,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ROBOT TEKOLOJİLERİ</title>
+    <title>PHP PROJE</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -26,12 +26,11 @@
     <link rel="stylesheet" type="text/css" href="footer.css">
     <link rel="stylesheet" type="text/css" href="first-content.css">
     <link rel="stylesheet" type="text/css" href="second-content.css">
-    <link rel="stylesheet" type="text/css" href="slider.css">
-    <link rel="stylesheet" type="text/css" href="slider-mobile.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="main-mobile.css">
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     
     <!-- JS FİLES -->
-    <script src="slider.js"></script>
     <script src="go-top-btn.js"></script>
     
 </head>
@@ -42,14 +41,7 @@
             <!--HEADER-->
             <div class="logo">
                 <!--logo-->
-                Robot Teknolojileri
-            </div>
-            <div class="social">
-                <!--socail-icons-->
-                <div class="fa fa-facebook-square"></div>
-                <div class="fa fa-twitter-square"></div>
-                <div class="fa fa-instagram"></div>
-                <div class="fa fa-info-circle"></div>
+                PHP PROJE
             </div>
         </div>
 
